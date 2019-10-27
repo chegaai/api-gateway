@@ -1,0 +1,10 @@
+http://localhost:8080/:
+  - path: /
+    method: get
+    at: /config.sample.yaml # optional
+    timeout: 3000  # optional
+    authenticated: true # optional
+    scopes: # optional
+      - driver.status.read
+    types: # optional
+      - admin
