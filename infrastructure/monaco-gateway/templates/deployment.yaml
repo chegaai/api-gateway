@@ -28,7 +28,7 @@ spec:
             - name: MAPS_FILE_URL
               value: {{ required "You must set environment.MAPS_FILE_URL" .Values.environment.MAPS_FILE_URL | quote }}
             - name: AUTH_JWT_AUDIENCE
-              value: {{ default "monaco-gateway" .Values.environment.AUTH_JWT_AUDIENCE | quote }}
+              value: {{ default "api-gateway" .Values.environment.AUTH_JWT_AUDIENCE | quote }}
             - name: AUTH_JWT_ISSUER
               valueFrom:
                 configMapKeyRef:

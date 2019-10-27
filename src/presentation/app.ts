@@ -6,7 +6,7 @@ import * as auth from '@expresso/auth'
 import { IAppConfig } from '../config'
 import debug from 'debug'
 
-const log = (namespace: string, message: string) => debug(`monaco-gateway:presentation:${namespace}`)(message)
+const log = (namespace: string, message: string) => debug(`api-gateway:presentation:${namespace}`)(message)
 
 export const app = expresso((app, config: IAppConfig, environment) => {
   const { jwt, types: checkTypes, scopes: requireScopes } = auth.factory(config.auth)

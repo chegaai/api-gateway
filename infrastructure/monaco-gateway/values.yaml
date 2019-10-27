@@ -11,7 +11,7 @@ cpuUsage: 80
 
 image:
   registry: nindooai.azurecr.io
-  name: monaco-gateway
+  name: api-gateway
   tag: v1.0.0
   pullPolicy: IfNotPresent
 

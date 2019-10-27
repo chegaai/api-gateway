@@ -19,7 +19,7 @@ export async function getConfig (): Promise<IAppConfig> {
   const routeMap = await getRouteMap(routeMapFileUrl)
 
   return {
-    name: 'monaco-gateway',
+    name: 'api-gateway',
     routes: routeMap,
     cors: {
       exposedHeaders: ['x-content-range']
@@ -31,7 +31,7 @@ export async function getConfig (): Promise<IAppConfig> {
     auth: {
       jwt: {
         algorithms: ['RS256'],
-        audience: env.get('AUTH_JWT_AUDIENCE', 'monaco-gateway'),
+        audience: env.get('AUTH_JWT_AUDIENCE', 'api-gateway'),
         issuer: env.get('AUTH_JWT_ISSUER', 'monaco-token-issuer'),
         secret: env.get('AUTH_JWT_SECRET', '')
       },

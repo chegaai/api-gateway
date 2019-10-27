@@ -1,5 +1,5 @@
 {
-  "name": "monaco-gateway",
+  "name": "api-gateway",
   "version": "1.1.1",
   "description": "Monaco Project API Gateway",
   "main": "dist/index.js",
@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nindooAI/monaco-gateway.git"
+    "url": "git+https://github.com/nindooAI/api-gateway.git"
   },
   "contributors": [
     "Rogério Munhoz <rogerio.j.munhoz@gmail.com>"
   ],
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/nindooAI/monaco-gateway/issues"
+    "url": "https://github.com/nindooAI/api-gateway/issues"
   },
-  "homepage": "https://github.com/nindooAI/monaco-gateway#readme",
+  "homepage": "https://github.com/nindooAI/api-gateway#readme",
   "dependencies": {
     "@expresso/app": "^1.1.1",
     "@expresso/auth": "^1.0.5",

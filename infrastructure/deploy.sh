@@ -14,10 +14,10 @@ read -p "Deploying $IMAGE_TAG to $NAMESPACE. Press [enter] to continue..."
 
 set -x
 
-helm upgrade --install --atomic monaco-gateway-${NAMESPACE} \
+helm upgrade --install --atomic api-gateway-${NAMESPACE} \
   --set "env=$NAMESPACE" \
   --set "image.tag=$IMAGE_TAG" \
   --set "ingress.hostname=api-monaco-$NAMESPACE.nindoo.io" \
   --set "environment.MAPS_FILE_URL=\"$CONFIG_FILE\"" \
   --namespace $NAMESPACE \
-  $CURRENT_DIR/monaco-gateway
+  $CURRENT_DIR/api-gateway
