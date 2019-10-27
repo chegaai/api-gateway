@@ -1,0 +1,6 @@
+export AUTH_JWT_AUDIENCE=
+export AUTH_JWT_ISSUER=
+
+# You only need to set one of these
+export AUTH_JWT_SECRET=
+export AUTH_JWKS_URI=
