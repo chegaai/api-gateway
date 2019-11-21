@@ -1,5 +1,6 @@
 export AUTH_JWT_AUDIENCE=
 export AUTH_JWT_ISSUER=
+# export AUTH_ALGORITHMS=defaults to RS256
 
 # You only need to set one of these
 export AUTH_JWT_SECRET=
