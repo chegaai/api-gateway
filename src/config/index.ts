@@ -30,7 +30,7 @@ export async function getConfig (): Promise<IAppConfig> {
     },
     auth: {
       jwt: {
-        algorithms: ['RS256'],
+        algorithms: env.get('AUTH_ALGORITHMS', 'RS256').split(','),
         audience: env.get('AUTH_JWT_AUDIENCE', 'api-gateway'),
         issuer: env.get('AUTH_JWT_ISSUER', 'monaco-token-issuer'),
         secret: env.get('AUTH_JWT_SECRET', '')
