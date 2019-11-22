@@ -4,13 +4,13 @@
 
 replicaCount: 1
 
-name: gateway
+name: api-gateway
 env: staging
 maxReplicas: 10
 cpuUsage: 80
 
 image:
-  registry: nindooai.azurecr.io
+  registry: chegaai.azurecr.io
   name: api-gateway
   tag: v1.0.0
   pullPolicy: IfNotPresent
@@ -21,13 +21,17 @@ service:
   portName: http
 
 ingress:
-  enabled: false
+  enabled: true
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
-  hostname: monaco.nindoo.io
+  hostname: api.chega.ai
 
 environment: {}
 
 resources:
   requests:
     cpu: 250m
+    memory: 128M
+  limits:
+    cpu: 500m
+    memory: 256M

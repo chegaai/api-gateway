@@ -21,3 +21,9 @@ spec:
       target:
         type: Utilization
         averageUtilization: {{ .Values.cpuUsage }}
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.memoryUsage }}
