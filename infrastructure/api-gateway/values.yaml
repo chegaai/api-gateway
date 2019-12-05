@@ -10,7 +10,7 @@ maxReplicas: 10
 cpuUsage: 80
 
 image:
-  registry: chegaai.azurecr.io
+  registry: chegaai
   name: api-gateway
   tag: v1.0.0
   pullPolicy: IfNotPresent
