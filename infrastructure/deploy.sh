@@ -2,7 +2,7 @@
 CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
 PARENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && cd .. && pwd )
 PACKAGE_VERSION=$(node -pe "require('$PARENT_DIR/package.json').version")
-CONFIG_FILE=$(cat $PARENT_DIR/../api-config.yaml | base64)
+CONFIG_FILE=$(envsubst < $PARENT_DIR/../api-config.yaml | base64)
 IMAGE_TAG=${2:-v$PACKAGE_VERSION}
 NAMESPACE=${1:-staging}
 
