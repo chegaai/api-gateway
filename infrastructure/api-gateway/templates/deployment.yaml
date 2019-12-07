@@ -31,6 +31,8 @@ spec:
               value: {{ default "api-gateway" .Values.environment.AUTH_JWT_AUDIENCE | quote }}
             - name: AUTH_JWT_ISSUER
               value: {{ default "urn:chega.ai:issuer" .Values.environment.AUTH_JWT_ISSUER | quote }}
+            - name: NODE_ENV
+              value: {{.Release.Namespace}}
           ports:
             - name: http
               containerPort: 3000
