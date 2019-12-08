@@ -27,10 +27,14 @@ spec:
           env:
             - name: MAPS_FILE_URL
               value: {{ required "You must set environment.MAPS_FILE_URL" .Values.environment.MAPS_FILE_URL | quote }}
+            - name: AUTH_JWT_SECRET
+              value: {{ required "You must set environment.AUTH_JWT_SECRET" .Values.environment.AUTH_JWT_SECRET | quote }}
             - name: AUTH_JWT_AUDIENCE
               value: {{ default "api-gateway" .Values.environment.AUTH_JWT_AUDIENCE | quote }}
             - name: AUTH_JWT_ISSUER
               value: {{ default "urn:chega.ai:issuer" .Values.environment.AUTH_JWT_ISSUER | quote }}
+            - name: AUTH_ALGORITHMS
+              value: {{ default "HS256" .Values.environment.AUTH_ALGORITHMS | quote }}
             - name: NODE_ENV
               value: {{.Release.Namespace}}
           ports:
