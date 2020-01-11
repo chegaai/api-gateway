@@ -47,7 +47,7 @@ const BASE_ROUTE_SCHEMA: JSONSchema = {
     at: { type: 'string' },
     timeout: { type: 'number' }
   },
-  required: ['path']
+  required: ['path', 'method']
 }
 
 const AUTHENTICATED_ROUTE_SCHEMA: JSONSchema = {
