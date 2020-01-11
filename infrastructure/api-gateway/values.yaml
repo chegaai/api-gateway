@@ -8,6 +8,7 @@ name: api-gateway
 env: staging
 maxReplicas: 10
 cpuUsage: 80
+memoryUsage: 90
 
 image:
   registry: chegaai
