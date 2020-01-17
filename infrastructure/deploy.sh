@@ -20,5 +20,6 @@ helm upgrade --install --atomic api-gateway-${NAMESPACE} \
   --set "ingress.hostname=api.chega.ai" \
   --set "environment.MAPS_FILE_URL=\"$CONFIG_FILE\"" \
   --set "environment.AUTH_JWT_SECRET=$AUTH_JWT_SECRET" \
+  --set "environment.AUTH_JWT_ISSUER=$AUTH_JWT_ISSUER" \
   --namespace $NAMESPACE \
   $CURRENT_DIR/api-gateway
