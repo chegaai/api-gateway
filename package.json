@@ -28,6 +28,7 @@
     "@expresso/auth": "^1.0.5",
     "@expresso/errors": "^1.2.0",
     "@expresso/server": "^1.1.3",
+    "@expresso/tracing": "^1.0.6",
     "@irontitan/proxy": "^1.0.2",
     "@types/debug": "^4.1.5",
     "@types/yaml": "^1.0.2",

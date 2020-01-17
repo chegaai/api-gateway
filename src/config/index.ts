@@ -1,12 +1,24 @@
 import env from 'sugar-env'
 import { IAuthConfig } from '@expresso/auth'
+import { LogLevel } from '@opentelemetry/core'
 import { getRouteMap, RouteMap } from './route-map'
 import { IExpressoConfigOptions } from '@expresso/app'
+import { IExpressoTracerConfig } from '@expresso/tracing/dist/types'
 
 export interface IAppConfig extends IExpressoConfigOptions {
   name: string,
   routes: RouteMap[],
   auth: IAuthConfig
+}
+
+export const tracingConfig: IExpressoTracerConfig = {
+  jaeger: {
+    serviceName: 'api-gateway',
+    host: env.get('JAEGER_AGENT_HOST', '')
+  },
+  tracer: {
+    logLevel: LogLevel.ERROR
+  }
 }
 
 export async function getConfig (): Promise<IAppConfig> {
@@ -22,7 +34,7 @@ export async function getConfig (): Promise<IAppConfig> {
     name: 'api-gateway',
     routes: routeMap,
     cors: {
-      exposedHeaders: ['x-content-range']
+      exposedHeaders: [ 'x-content-range' ]
     },
     bodyParser: {
       json: false,

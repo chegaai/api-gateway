@@ -1,15 +1,18 @@
+import debug from 'debug'
 import guards from './route-guards'
 import expresso from '@expresso/app'
 import proxy from '@irontitan/proxy'
 import errors from '@expresso/errors'
 import * as auth from '@expresso/auth'
 import { IAppConfig } from '../config'
-import debug from 'debug'
+import tracing from '@expresso/tracing'
 
 const log = (namespace: string, message: string) => debug(`api-gateway:presentation:${namespace}`)(message)
 
 export const app = expresso((app, config: IAppConfig, environment) => {
   const { jwt, types: checkTypes, scopes: requireScopes } = auth.factory(config.auth)
+
+  app.use(tracing.factory())
 
   for (const route of config.routes) {
     log('routes', `loading route ${JSON.stringify(route)}`)
